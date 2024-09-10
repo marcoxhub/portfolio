@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio SQL</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 style="background-color: black;">Portfólio</h1>
+    
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a style="color: green;" href="#contato">Contato</a></li>
+                <li><a style="color: rgb(255, 255, 255);" href ="https://github.com/marcoxhub">GitHub<a/</li>
+                    <li><a href="#experiencia">Experiência</a></li>
+                    <li><a href="#educacao">Educação</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li ><a style="color: #0077b5;" href="https://www.linkedin.com/in/marcosantos091/">LinkedIn</a></li>
+                    <a href="https://drive.google.com/file/d/1I7pxXAfBn4oq4IGPwYZn5bofdt0uB3ZJ/view?usp=sharing" download="Currículo" class="resume-link">Baixar Currículo</a>
+                </section>
+            </ul>
+        </nav>
+        <button id="back-to-top">Voltar ao Topo</button>
+
+    </header>
+    <main>
+        <section id="sobre">
+            <h2 style="text-align: center;">Sobre Mim</h2>,
+            <p style="color: red;text-align: center;">Bem-vindo ao meu portfólio de códigos SQL DA <a href="https://www.totvs.com/blog/erp/winthor-novas-funcionalidades/">TOTVS WINTHOR WMS</a> ,aqui você encontrará uma coleção de scripts e consultas SQL.;
+Possuo habilidades em informática em nível intermediário/avançado, incluindo proficiência em várias ferramentas de softwares administrativos e uma capacidade comprovada de me adaptar rapidamente a novas tecnologias. 
+
+            </p>
+        </section>
+        <section id="experiencia">
+            <h2 style="text-align: center;">Experiência Profissional</h2>
+            <div class="experiencia">
+                <h3 style="text-align: center;">Assistente Administrativo de Logística</h3>
+                <p style="text-align: center;"><strong>Empresa:</strong> <a href="https://www.g1distribuidora.com.br/site/">G1 DISTRIBUIDORA</a></p>
+                <p style="text-align: center;"><strong>Duração:</strong> 2023 - [Atual]</p>
+                <p style="text-align: center;">Trabalho com o sistema WMS Winthor da TOTVS. Minhas responsabilidades incluíam a coordenação de processos logísticos, análise de dados de estoque e suporte à equipe de operações.</p>
+       
+            </section>
+    
+        <section id="educacao">
+            <h2 style="text-align: center;">Educação</h2>
+            <div class="educacao">
+                <h3 style="text-align: center;">Faculdade de Análise e Desenvolvimento de Sistemas</h3>
+                <p style="text-align: center;"><strong>Instituição:</strong> Estácio</p>
+                <p style="text-align: center;"><strong>Duração:</strong> 2024 - 2026</p>
+
+                <section id="habilidades">
+                    <h2 style="text-align:center;">Habilidades</h2>
+                    <ul>
+                        <li style="text-align: center;">Sistemas WMS (Winthor TOTVS)</li>
+                        <li style="text-align: center;">SQL</li>
+                        <li style="text-align: center;">Análise de Dados</li>
+                        <li style="text-align: center;">Banco de Dados</li>
+                        <li style="text-align: center;">Pacote Office</li>
+
+                    </section>
+                    <section id="contato">
+                        <h2 style="text-align:center;">Contato :</h2>
+                        <h4 style="text-align: center;">Celular:</h4>
+                        <p style="text-align: center;text-decoration: solid;color: green;"> Whastapp : <a href = 'https://api.whatsapp.com/send/?phone=5581986439557&text&type=phone_number&app_absent=0'>(81)986439557</p>
+                        <ul>
+                            <h3 style="text-align: center;">E-mail:</h3>
+                            <li style="text-align: center;"><a href="https://mail.google.com/mail/u/0/?pli=1#inbox">marcofelipe86@gmail.com</a></li>
+                           
+
+        <section id="portfolio">
+            <h2 style="text-align: center;">Portfólio</h2>
+            <div class="code-container">
+                <h3 style="text-align: center;">Consulta SQL Puxar Quantidade do Estoque WMS e GERENCIAL (TOTVS WINTHOR WMS)</h3>
+                <pre style="color: rgb(229, 12, 237);text-align: center;"><code class="sql">  select PE.codfilial AS FILIAL,PE.codprod AS CODIGO,PT.DESCRICAO,PE.qtest AS WMS,PE.qtestger AS GERENCIAL, PE.qtindeniz AS AVARIA
+                    , PE.qtbloqueada AS BLOQUEADO,pe.dtultent as ULTIMA_ENTRADA,pe.dtultsaida AS ULTIMA_SAIDA ,pe.dtultinvent AS ULTIMO_INVENTARIO from pcest PE
+                    
+                    INNER JOIN PCPRODUT PT
+                    ON PE.CODPROD = PT.CODPROD
+                    
+                     where PE.codfilial between 1 and 2 AND PE.CODPROD = :CODPROD AND PE.CODFILIAL = :CODFILIAL 
+             
+                    order by PE.codfilial,PE.codprod ;;</code></pre>
+            </div>
+            <div class="code-container">
+                <h3 style="text-align: center;">Consulta SQL PEDIDOS E ROTAS (TOTVS WINTHOR WMS)</h3>
+                <pre style="text-align: center;color: green
+                ;"><code class="sql">SELECT  DISTINCT(PM.NUMOS),PM.NUMPED,PV.NUMVOL,PM.CODFUNCCONF ||'-'|| PER.NOME,PP.ROTA,PM.DTFIMOS FROM PCMOVENDPEND PM
+ 
+                    INNER JOIN PCPRACA PP
+                    ON PM.CODPRACA = PP.CODPRACA
+                    
+                    INNER JOIN PCEMPR PER
+                    ON PM.CODFUNCCONF = PER.MATRICULA
+                    
+                    INNER JOIN PCVOLUMEOS PV
+                    ON PM.NUMVOL = PV.NUMVOL
+                    
+                    
+                    
+                   
+                    WHERE PM.DATA BETWEEN :DTINI AND :DTFIM;</code></pre>
+
+                </p>
+            </section>
+            <section id="portfolio">
+                <h2 style="text-align: center;">Portfólio</h2>
+                <div class="code-container">
+                    <h3 style="text-align: center;">Consulta SQL PUXAR OS CAIXA FECHADA (TOTVS WINTHOR WMS)</h3>
+                    <pre style="color: rgb(15, 82, 225);text-align: center;"><code class="sql"> SELECT DISTINCT PM.NUMPED,(PM.NUMOS),PM.CODPROD,PT.DESCRICAO,PM.QTSEPARADA,PP.ROTA,(PM.NUMVOL),PM.DTFIMOS,PR.NOME FROM PCMOVENDPEND PM
+ 
+                        INNER JOIN PCPRACA PP
+                        ON PM.CODPRACA = PP.CODPRACA
+                        
+                        INNER JOIN PCPRODUT PT
+                        ON PM.CODPROD = PT.CODPROD
+                        
+                        INNER JOIN PCEMPR PR
+                        ON PM.CODFUNCOS = PR.MATRICULA
+                        
+                       
+                        WHERE PM.DATA BETWEEN :DTINI AND :DTFIM AND PM.TIPOOS = 20 ;        
+            </div>
+
+        </section>
+        <section id="portfolio">
+            <h2 style="text-align: center;">Portfólio</h2>
+            <P style="text-align: center;">Site Feito EM HTML,CSS E JAVASCRIPT</P>
+            <li><a style="text-align: center;" href="https://pedido-ruby.vercel.app/"> -----------------------------------------------------------------------------------------------LINK</a></li>
+           
+             
+            </ul>
+        </section>
+    </main>
+    <footer>
+
+
+    </div>
+</section>
+
+    </footer>
+    <section id="faq">
+        <h2 style="color: black; font-size: small;text-align: center;">Perguntas Frequentes :</h2>
+        <div class="faq-item">
+            <h3 style="color: black;font-size:small ;text-align: center;" class="faq-question">Qual é a sua principal área de especialização?</h3>
+            <p style="color: black;font-size: small;text-align: center;" class="faq-answer">Minha principal área de especialização é em desenvolvimento de sistemas, com foco em análise de dados e integração de sistemas.</p>
+        </div>
+        <div class="faq-item">
+            <h3 style="color: black;font-size: small;text-align: center;" class="faq-question">Quais são suas linguagens de programação favoritas?</h3>
+            <p style="color: black;font-size: small;text-align: center;" class="faq-answer">Minhas linguagens de programação favoritas são Python, HTML e SQL. Cada uma delas tem um papel crucial em diferentes aspectos do desenvolvimento e análise de dados.</p> 
+</body>
+</html>

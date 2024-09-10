@@ -1,0 +1,141 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #040404;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+.code-container {
+    margin-bottom: 2rem;
+}
+
+code.sql {
+    display: block;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+footer {
+    background: #ebe8e9;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+button#back-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: #e40808;
+    color: #161515;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.code-container {
+    transition: background-color 0.3s;
+}
+
+.code-container:hover {
+    background-color: #dcd7d7;
+}
+
+code.sql {
+    transition: background-color 0.3s;
+}
+
+code.sql:hover {
+    background-color: #b4c19f;
+}
+
+/* Estilo para a seção FAQ */
+#faq {
+    padding: 2rem;
+    background: #f4f4f4;
+    border-radius: 5px;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.faq-question {
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.faq-answer {
+    display: none;
+    font-size: 1rem;
+    color: #151515;
+    transition: opacity 0.3s;
+}
+
+.faq-item:hover .faq-answer {
+    display: block;
+    opacity: 1;
+}
+
+.faq-question:hover {
+    color: #141415;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #1c1b1b;
+    background: url('https://img.freepik.com/vetores-gratis/fundo-branco-monocromatico-de-estilo-de-papel_23-2149023490.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+}
+
+#content {
+    padding: 2rem;
+    text-align: center;
+    color: rgb(235, 229, 229); 
+}
+
+
+
